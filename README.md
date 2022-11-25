@@ -8,6 +8,7 @@
 
 ## Introduction
 
+QUalunque cosa
 FlutterBluePlus is a bluetooth plugin for [Flutter](https://flutter.dev), a new app SDK to help developers build modern multi-platform apps. Note: this plugin is continuous work from FlutterBlue since maintaince stoped.
 
 ## Alpha version
