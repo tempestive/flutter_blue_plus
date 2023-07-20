@@ -8,8 +8,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.0'
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.9.3'
+        classpath 'com.android.tools.build:gradle:8.0.2'
     }
 }
 
@@ -21,10 +21,9 @@ rootProject.allprojects {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.google.protobuf'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     if (project.android.hasProperty("namespace")) {
         namespace 'com.boskokg.flutter_blue_plus'
@@ -38,34 +37,6 @@ android {
     defaultConfig {
         minSdkVersion 19
     }
-    sourceSets {
-        main {
-            proto {
-                srcDir '../protos'
-            }
-        }
-    }
-}
 
-protobuf {
-    protoc {
-        if (project.hasProperty('protoc_platform')) {
-            artifact = "com.google.protobuf:protoc:3.18.0:${protoc_platform}"
-        } else {
-            artifact = "com.google.protobuf:protoc:3.18.0"
-        }
-    }
-    generateProtoTasks {
-        all().each { task ->
-            task.builtins {
-                java {
-                    option "lite"
-                }
-            }
-        }
-    }
-}
-
-dependencies {
-    implementation 'com.google.protobuf:protobuf-javalite:3.18.0'
+    namespace 'com.boskokg.flutter_blue_plus'
 }
