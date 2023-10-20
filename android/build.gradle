@@ -6,10 +6,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 33
 
-    if (project.android.hasProperty("namespace")) {
-        namespace 'com.boskokg.flutter_blue_plus'
-    }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
